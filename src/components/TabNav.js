@@ -17,18 +17,17 @@ const createLabel = (iconName, labelText) => <span><Icon name={iconName} />{labe
 
 const welcomeLabel = createLabel("home", "Home Page")
 const characterLabel = createLabel("users", "Characters")
-const locationLabel = createLabel("map", 'locations');
+const locationLabel = createLabel("map", 'Locations');
 const episodeLabel = createLabel("video", 'Episodes')
 
 
 const panes = [
-  { menuItem: <Menu.Item as={Nav} to={`/`} content={welcomeLabel} /> },
-  { menuItem: <Menu.Item as={Nav} to={`/characters`} content={characterLabel} /> },
-  { menuItem: <Menu.Item as={Nav} to={'/locations'} content={locationLabel} />},
-  { menuItem: <Menu.Item as={Nav} to={'/episodes'} content={episodeLabel} />}
-
+  { menuItem: <Menu.Item key='home' as={Nav} to={`/`} content={welcomeLabel} /> },
+  { menuItem: <Menu.Item key='characters' as={Nav} to={`/characters`} content={characterLabel} /> },
+  { menuItem: <Menu.Item key='locations' as={Nav} to={'/locations'} content={locationLabel} />},
+  { menuItem: <Menu.Item key='episodes' as={Nav} to={'/episodes'} content={episodeLabel} />}
 ]
 
-const TabNav = () => <Tab panes={panes} renderActiveOnly={false} />
+const TabNav = () => <Tab panes={panes}  />
 
 export default TabNav
